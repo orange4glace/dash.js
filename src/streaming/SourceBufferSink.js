@@ -209,7 +209,7 @@ function SourceBufferSink(mediaSource, mediaInfo, onAppendedCallback, oldBuffer)
                 }
                 buffer.appendWindowStart = 0;
                 buffer.appendWindowEnd = appendWindowEnd;
-                buffer.appendWindowStart = appendWindowStart;
+                buffer.appendWindowStart = window.__dashjs_global_appendWindowStart || appendWindowStart;
                 logger.debug(`Updated append window. Set start to ${buffer.appendWindowStart} and end to ${buffer.appendWindowEnd}`);
             } catch (e) {
                 logger.warn(`Failed to set append window`);
